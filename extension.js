@@ -10,7 +10,7 @@ const homedir = require("os").homedir();
  */
 function activate(context) {
   let openCommand = vscode.commands.registerCommand(
-    "dailyNotes.open",
+    "workingmemory.open",
     async function () {
       await prepareFile();
       const filePath = getFilePath();
@@ -22,7 +22,7 @@ function activate(context) {
   );
 
   let insertCommand = vscode.commands.registerCommand(
-    "dailyNotes.insert",
+    "workingmemory.insert",
     function () {
       vscode.window
         .showInputBox({
@@ -38,49 +38,21 @@ function activate(context) {
           try {
             await prepareFile();
             const filePath = getFilePath();
-            await appendToFileAtLine(filePath, text, 2);
+            await appendToFileAtLine(filePath, text, 1);
           } catch (error) {
             console.error(error);
             return vscode.window.showErrorMessage(
-              "Cannot edit Daily Notes File."
+              "Cannot edit Working Memory File."
             );
           }
         });
     }
   );
 
-  async function setSyntaxHighlight(extensionPath) {
-    const currentConfig = vscode.workspace.getConfiguration(
-      "editor.tokenColorCustomizations"
-    );
-
-    if (currentConfig.has("textMateRules")) return;
-
-    const colors = await fsp.readFile(
-      extensionPath + "/syntaxes/custom-colors.json",
-      "utf8"
-    );
-
-    let mutableConfig = JSON.parse(JSON.stringify(currentConfig));
-
-    mutableConfig.textMateRules = JSON.parse(colors.toString());
-
-    vscode.workspace
-      .getConfiguration("editor")
-      .update(
-        "tokenColorCustomizations",
-        mutableConfig,
-        vscode.ConfigurationTarget.Global
-      );
-  }
-
   async function prepareFile() {
     const filePath = getFilePath();
 
-    await setSyntaxHighlight(context.extensionPath);
-
     if (existsSync(filePath)) {
-      await prependDateHeader(filePath);
     } else {
       await createNewNote(filePath);
     }
@@ -89,34 +61,28 @@ function activate(context) {
   function getFilePath() {
     const configFilePath = vscode.workspace
       .getConfiguration()
-      .get("dailyNotes.filePath")
+      .get("workingmemory.filePath")
       .replace("~/", homedir.concat("/"));
 
     if (configFilePath) {
       return configFilePath;
     } else {
-      return homedir + "/daily-notes.md";
+      return homedir + "/wm.md";
     }
   }
 
-  function dateHeader() {
-    const today = new Date();
-    const configDateFormat = vscode.workspace
-      .getConfiguration()
-      .get("dailyNotes.dateFormat");
+  function wmHeader() {
+    // const today = new Date();
+    // const configDateFormat = vscode.workspace
+    //   .getConfiguration()
+    //   .get("dailyNotes.dateFormat");
 
-    if (configDateFormat) {
-      return "## " + moment(today).format(configDateFormat) + "\r\n\r\n\r\n";
-    } else {
-      return "## " + today.toDateString() + "\r\n\r\n\r\n";
-    }
-  }
-
-  async function prependDateHeader(filePath) {
-    const lastDateHeader = await firstline(filePath);
-    if (lastDateHeader.trim() != dateHeader().trim()) {
-      await prependFile(filePath, dateHeader());
-    }
+    // if (configDateFormat) {
+    //   return "## " + moment(today).format(configDateFormat) + "\r\n\r\n\r\n";
+    // } else {
+    //   return "## " + today.toDateString() + "\r\n\r\n\r\n";
+    // }
+    return "## Capture" + "\r\n\r\n\r\n"
   }
 
   async function prependFile(filePath, content) {
@@ -131,7 +97,7 @@ function activate(context) {
     } catch (error) {
       if (error && error.code !== "ENOENT") {
         console.error(error);
-        vscode.window.showErrorMessage("Cannot edit Daily Notes File.");
+        vscode.window.showErrorMessage("Cannot edit Working Memory File.");
       }
     }
   }
@@ -148,18 +114,18 @@ function activate(context) {
     } catch (error) {
       if (error && error.code !== "ENOENT") {
         console.error(error);
-        vscode.window.showErrorMessage("Cannot edit Daily Notes File.");
+        vscode.window.showErrorMessage("Cannot edit Working Memory.");
       }
     }
   }
 
   async function createNewNote(filePath) {
     try {
-      await fsp.writeFile(filePath, dateHeader());
+      await fsp.writeFile(filePath, wmHeader());
     } catch (error) {
       console.error(error);
       return vscode.window.showErrorMessage(
-        `Cannot edit Daily Notes File in "${filePath}". Make sure the directory is present.`
+        `Cannot edit Working Memory File in "${filePath}". Make sure the directory is present.`
       );
     }
   }

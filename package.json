@@ -1,6 +1,6 @@
 {
-  "name": "vscode-daily-notes",
-  "displayName": "VSCode Daily Notes",
+  "name": "vscode-working-memory",
+  "displayName": "VSCode Working Memory",
   "description": "A simple text-based journal extension for Visual Studio Code",
   "keywords": [
     "daily notes",
@@ -9,7 +9,7 @@
     "markdown",
     "text"
   ],
-  "version": "1.0.8",
+  "version": "1.0.1",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.41.1"
@@ -18,64 +18,41 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:dailyNotes.open",
-    "onCommand:dailyNotes.insert"
+    "onCommand:workingmemory.open",
+    "onCommand:workingmemory.insert"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "dailyNotes.open",
-        "title": "Daily Notes: Open"
+        "command": "workingmemory.open",
+        "title": "Working Memory: Open"
       },
       {
-        "command": "dailyNotes.insert",
-        "title": "Daily Notes: Insert"
+        "command": "workingmemory.insert",
+        "title": "Working Memory: Insert"
       }
     ],
     "keybindings": [
       {
-        "command": "dailyNotes.open",
-        "key": "alt+n"
+        "command": "workingmemory.open",
+        "key": "alt+m"
       },
       {
-        "command": "dailyNotes.insert",
+        "command": "workingmemory.insert",
         "key": "alt+i"
       }
     ],
     "configuration": {
       "title": "Daily Notes",
       "properties": {
-        "dailyNotes.filePath": {
+        "workingmemory.filePath": {
           "type": "string",
           "default": "",
           "description": "Set the exact location of the file"
-        },
-        "dailyNotes.dateFormat": {
-          "type": "string",
-          "default": "",
-          "description": "Set the format of date header"
         }
       }
-    },
-    "languages": [
-      {
-        "id": "Plain Text",
-        "extensions": [
-          ".txt"
-        ]
-      }
-    ],
-    "grammars": [
-      {
-        "language": "Plain Text",
-        "scopeName": "text.notes",
-        "path": "./syntaxes/notes.tmGrammar.json",
-        "injectTo": [
-          "text.html.markdown"
-        ]
-      }
-    ]
+    }
   },
   "scripts": {
     "test": "node ./test/runTest.js"
@@ -92,12 +69,12 @@
     "vscode-test": "^1.2.0"
   },
   "dependencies": {
-    "firstline": "2.0.2",
+    "firstline": "^2.0.2",
     "moment": "^2.29.2"
   },
-  "publisher": "inaki",
+  "publisher": "atomashevic",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inaki-ibarra/vscode-daily-notes"
+    "url": "https://github.com/atomashevic/vscode-working-memory"
   }
 }
