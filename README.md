@@ -1,5 +1,7 @@
 # VSCode Working Memory
 
+__Plaintext productivity with a single file__
+
 A simple text-based extension for Visual Studio Code - Single plaintext file productivity
 
 Fork of [VSCode Daily Notes](https://marketplace.visualstudio.com/items?itemName=Inaki.vscode-daily-notes) extension.
