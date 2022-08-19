@@ -6,10 +6,9 @@ Fork of [VSCode Daily Notes](https://marketplace.visualstudio.com/items?itemName
 
 ## Features
 
-* Access your Working Memory conveniently with a shortcut: `Alt+M`
-* Insert a note anywhere with a shortcut: `Alt+I`
-* Made in Markdown format so VSCode preview is possible with: `Ctrl+Shift+V`
-* Syntax highlighting for selected tags
+* Access your Working Memory conveniently with a shortcut: `Alt+m`
+* Insert a note anywhere with a shortcut: `Alt+i`
+* Made in Markdown format so VSCode preview is possible with: `Ctrl+Shift+v`
 
 ## Usage
 
