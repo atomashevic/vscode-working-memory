@@ -38,7 +38,8 @@ function activate(context) {
           try {
             await prepareFile();
             const filePath = getFilePath();
-            await appendToFileAtLine(filePath, text, 1);
+            await appendToFileAtLine(filePath, " ", 1);
+            await appendToFileAtLine(filePath, text, 2);
           } catch (error) {
             console.error(error);
             return vscode.window.showErrorMessage(
@@ -108,7 +109,6 @@ function activate(context) {
       var lines = result.toString().split("\n");
       lines.splice(lineNumber, 0, content);
       content = lines.join("\n");
-      content = "\n" + content
       await fsp.writeFile(filePath, content);
     } catch (error) {
       if (error && error.code !== "ENOENT") {
