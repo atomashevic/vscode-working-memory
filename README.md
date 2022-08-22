@@ -33,6 +33,15 @@ Appending lines to the file with `Alt+I` will insert the text line surrounded by
 * Capture to Working Memory from anywhere with a shortcut: `Alt+I`
 * Made in Markdown format so VSCode preview is possible with: `Ctrl+Shift+V`
 
+
+## Installation
+
+View in [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=atomashevic.vscode-working-memory) for more info.
+
+Launch VS Code Quick Open `(Ctrl+P)` and enter:
+
+`ext install atomashevic.vscode-working-memory`
+
 ## Usage
 
 There are 2 ways to open Working Memory:
