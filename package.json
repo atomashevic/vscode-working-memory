@@ -1,7 +1,7 @@
 {
   "name": "vscode-working-memory",
   "displayName": "VSCode Working Memory",
-  "description": "A simple text-based journal extension for Visual Studio Code",
+  "description": "Single file plaintext productivity - Access Working Memory file from anywhere in VSCode",
   "keywords": [
     "daily notes",
     "notes",

@@ -2,15 +2,37 @@
 
 __Plaintext productivity with a single file__
 
-A simple text-based extension for Visual Studio Code.
+Single file plaintext productivity - Access Working Memory file from anywhere in VSCode.
 
 Fork of [VSCode Daily Notes](https://marketplace.visualstudio.com/items?itemName=Inaki.vscode-daily-notes) extension.
 
+Icon created by [DALL-E](https://labs.openai.com/).
+
+## Idea
+
+Extension is inspired by Cal Newport's idea about `WorkingMemory.txt` file. See *Deep Questions* podcast episode for more details.
+
+[![Deep Questions Podcast](images/dq.png)](https://www.youtube.com/watch?v=3-MOxvedJXM&t=0s)
+
+The core of the idea is to use a single text file as a trusted capture mechanism.
+
+> WorkingMemory.txt is a simple text file where you constantly add stuff to it. Always look at it. Let it grow. Clean things off. 
+
+If you spend a lot of time in VSCode during your workday, jumping from one workspace/project to another, you can use Working Memory to capture bits and pieces of information throughout your work day.
+
+This extension enables you to open a single text or markdown file from anywhere or to quickly capture something to this file without opening it. 
+
+The file itself has no specific structure. It begins with a second-level markdown header `## Capture` and has several empty lines.
+
+Appending lines to the file 
+
+
+
 ## Features
 
-* Access your Working Memory conveniently with a shortcut: `Alt+m`
-* Insert a note anywhere with a shortcut: `Alt+i`
-* Made in Markdown format so VSCode preview is possible with: `Ctrl+Shift+v`
+* Access your Working Memory conveniently with a shortcut: `Alt+M`
+* Capture to Working Memory from anywhere with a shortcut: `Alt+I`
+* Made in Markdown format so VSCode preview is possible with: `Ctrl+Shift+V`
 
 ## Usage
 
@@ -27,6 +49,8 @@ If the Daily Notes file is already open:
 You may save your note file anywhere:
 
 * Create a new file `wm.md`, copy the path and set the `workingmemory.filePath` in config.
+
+Using `Alt+M`
 
 You can can insert a quick note without opening the Daily Notes File: Press `Alt+I`
 

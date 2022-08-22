@@ -105,11 +105,10 @@ function activate(context) {
   async function appendToFileAtLine(filePath, content, lineNumber) {
     try {
       const result = await fsp.readFile(filePath, "utf8");
-
       var lines = result.toString().split("\n");
       lines.splice(lineNumber, 0, content);
       content = lines.join("\n");
-
+      content = "\n" + content
       await fsp.writeFile(filePath, content);
     } catch (error) {
       if (error && error.code !== "ENOENT") {
