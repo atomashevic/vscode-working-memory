@@ -3,13 +3,14 @@
   "displayName": "VSCode Working Memory",
   "description": "Single file plaintext productivity - Access Working Memory file from anywhere in VSCode",
   "keywords": [
-    "daily notes",
-    "notes",
-    "journal",
+    "plaintext",
+    "cal newport",
+    "plaintext productivity",
+    "working memory",
     "markdown",
     "text"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.41.1"
