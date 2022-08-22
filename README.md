@@ -10,7 +10,7 @@ Icon created by [DALL-E](https://labs.openai.com/).
 
 ## Idea
 
-Extension is inspired by Cal Newport's idea about `WorkingMemory.txt` file. See *Deep Questions* podcast episode for more details.
+The extension is inspired by Cal Newport's idea about `WorkingMemory.txt` file. See the _Deep Questions_ podcast episode for more details.
 
 [![Deep Questions Podcast](images/dq.png)](https://www.youtube.com/watch?v=3-MOxvedJXM&t=0s)
 
@@ -24,8 +24,7 @@ This extension enables you to open a single text or markdown file from anywhere 
 
 The file itself has no specific structure. It begins with a second-level markdown header `## Capture` and has several empty lines.
 
-Appending lines to the file 
-
+Appending lines to the file with `Alt+I` will insert the text line surrounded by empty lines below the `## Capture` heading to make the text clearly noticeable when you revisit your Working Memory text file.
 
 
 ## Features
@@ -36,7 +35,7 @@ Appending lines to the file
 
 ## Usage
 
-There are 2 ways to open Woking Memory:
+There are 2 ways to open Working Memory:
 
 * VSCode Command: `Ctrl+Shift+P` or `F1`, then type `Working Memory: Open`
 * Shortcut Key-bind: Press `Alt+M`
@@ -48,30 +47,35 @@ If the Daily Notes file is already open:
 
 You may save your note file anywhere:
 
-* Create a new file `wm.md`, copy the path and set the `workingmemory.filePath` in config.
+* Create a new file `wm.md`, copy the path, and set the `workingmemory.filePath` in config.
 
 Using `Alt+M`
 
-You can can insert a quick note without opening the Daily Notes File: Press `Alt+I`
+You can insert a quick note without opening the Daily Notes File: Press `Alt+I`
 
 ## Extension Settings
 
 This extension contributes the following settings:
 
-* `workingmemory.filePath`: The complete location of the file to be used. When empty the file will be created in user's home directory.
+* `workingmemory.filePath`: The complete location of the file to be used. When empty the file will be created in the user's home directory.
   * Sample path for Windows: `c:/Users/John/daily-notes.md`
   * Sample path for Mac or Linux: `Users/john/daily-notes.md`
 
-* `editor.tokenColorCustomizations.textMateRules`: You can customize tag colors here.
+## Roadmap
 
-## Known Issues
+General improvements: optional structuring of the Working Memory file and improvements to context-specific capture/append commands.
 
-* If you are using remote Windows Subsystem for Linux a.k.a WSL for VSCode, the file path format from Windows may not work.
-This can be solved easily by using the file path from WSL e.g. `/mnt/c/projects`.
+- [ ] Quickly insert code from other files as Markdown code blocks in Working Memory (in a separate section).
+- [ ] Option to place Working Memory in the sidebar similar to [Sidebar Markdown Notes](https://github.com/AssisrMatheus/sidebar-markdown-notes)
+- [ ] Implement `## Weekly plan` into the Working Memory workflow as a separate optional section with new commands.
+- [ ] Markdown Time-blocking.
+
 
 ## Contributing
+
 - Pull requests are welcome for features and bug fixes
 - Feel free to create issues when you encounter problems
 
 ## License
+
 The extension is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
