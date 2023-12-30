@@ -73,8 +73,7 @@ General improvements: optional structuring of the Working Memory file and improv
 
 - [ ] Quickly insert code from other files as Markdown code blocks in Working Memory (in a separate section).
 - [ ] Option to place Working Memory in the sidebar similar to [Sidebar Markdown Notes](https://github.com/AssisrMatheus/sidebar-markdown-notes)
-- [ ] Implement `## Weekly plan` into the Working Memory workflow as a separate optional section with new commands.
-- [ ] Markdown Time-blocking.
+
 
 
 ## Contributing
