@@ -2,6 +2,8 @@
 
 __Plaintext productivity with a single file__
 
+![Plaintext productivity with Working Memory scratch file](images/wm.jpeg)
+
 Single file plaintext productivity - Access your Working Memory file from anywhere in VSCode.
 
 It doen't matter if you are working on a project, reading documentation, or browsing the web. You can quickly capture your thoughts and ideas to a single file without the need to open it.
