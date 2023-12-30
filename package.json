@@ -1,14 +1,19 @@
 {
   "name": "vscode-working-memory",
   "displayName": "VSCode Working Memory",
-  "description": "Single file plaintext productivity - Access Working Memory file from anywhere in VSCode",
+  "description": "Single file plaintext productivity - Access Working Memory Scratch file from anywhere in VSCode",
   "keywords": [
     "plaintext",
     "cal newport",
+    "scratch file",
+    "scratchpad",
+    "scratch",
     "plaintext productivity",
     "working memory",
     "markdown",
-    "text"
+    "text",
+    "notes",
+    "todo"
   ],
   "version": "1.0.2",
   "icon": "images/icon.png",
@@ -45,7 +50,7 @@
       }
     ],
     "configuration": {
-      "title": "Daily Notes",
+      "title": "Working Memory",
       "properties": {
         "workingmemory.filePath": {
           "type": "string",

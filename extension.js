@@ -73,16 +73,6 @@ function activate(context) {
   }
 
   function wmHeader() {
-    // const today = new Date();
-    // const configDateFormat = vscode.workspace
-    //   .getConfiguration()
-    //   .get("dailyNotes.dateFormat");
-
-    // if (configDateFormat) {
-    //   return "## " + moment(today).format(configDateFormat) + "\r\n\r\n\r\n";
-    // } else {
-    //   return "## " + today.toDateString() + "\r\n\r\n\r\n";
-    // }
     return "## Capture" + "\r\n\r\n\r\n"
   }
 
