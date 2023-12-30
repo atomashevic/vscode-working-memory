@@ -16,7 +16,7 @@
     "todo"
   ],
   "version": "1.0.2",
-  "icon": "images/icon.png",
+  "icon": "images/wm.jpeg",
   "engines": {
     "vscode": "^1.41.1"
   },
